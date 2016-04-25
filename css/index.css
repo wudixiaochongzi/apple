@@ -190,6 +190,9 @@ a {
   .banner-box {
     height: 650px;
   }
+  .banner-box .banner ul li a {
+    background-size: cover;
+  }
 }
 .con-list div {
   padding: 0;
