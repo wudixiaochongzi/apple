@@ -1,0 +1,105 @@
+@import "var";
+
+.pad(@colPadding){
+  padding-left: @colPadding;
+  padding-right: @colPadding;
+}
+//三个容器
+.container{
+  display: block;
+  height: auto;
+  margin-left: auto!important;
+  margin-right: auto!important;
+  .pad(@colPadding);
+  &-fluid{
+    display: block;
+    height: auto;
+    .pad(@colPadding);
+  }
+  & .row,&-fluid .row {
+    margin-left: -@colPadding;
+    margin-right: -@colPadding;
+    display: block;
+  }
+  & .row:after,&-fluid .row:after{
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
+    line-height: 0;
+    font-size: 0;
+  }
+}
+
+//图片响应
+.img-response{
+  max-width: 100%;
+  display: block;
+  height:auto;
+}
+
+//居中
+[center-block]{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+[center-text]{
+  text-align: center;
+}
+
+.grid (@type,@i:1) when (@i<=@cols) {
+  .col-@{type}-@{i}{
+    display: block;
+    float: left;
+    width: 100%/@cols*@i;
+    .pad(@colPadding);
+  }
+  .grid(@type,@i+1);
+}
+
+
+
+.g (@screen,@name){
+  @media screen and (min-width: @screen) {
+    .container{
+      width: @screen - @colPadding*2;
+    }
+    .grid(@name);
+  }
+}
+
+/*手机端：w<768 col-xs- 默认*/
+.grid(xs,1);
+
+/*平板：w>768 col-sm- 默认*/
+.g(@smScreen,sm);
+
+/*pc小屏：w>1000 col-md- 默认*/
+.g(@mdScreen,md);
+
+/*pc大屏：w>1200 col-lg- 默认*/
+.g(@lgScreen,lg);
+
+//隐藏列
+@media screen and (max-width: @smScreen) {
+  .hidden-xs{
+    display: none!important;
+  }
+}
+@media screen and (min-width: @smScreen) and (max-width: @mdScreen) {
+  .hidden-sm{
+    display: none!important;
+  }
+}
+@media screen and (min-width: @mdScreen) and (max-width: @lgScreen) {
+  .hidden-md{
+    display: none!important;
+  }
+}
+@media screen and (min-width: @lgScreen) {
+  .hidden-lg{
+    display: none!important;
+  }
+}
+
