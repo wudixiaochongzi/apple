@@ -6,6 +6,7 @@ $(function(){
     var $navBtn=$('.nav-min-btn');
     var $navMax=$('.nav-max');
     var $header=$('.header');
+    var $shop=$('.nav-min-shop');
     var screenH=document.documentElement.clientHeight;
     var flag=true;
     $navBtn.click(function(){
@@ -13,11 +14,13 @@ $(function(){
             $header.css({background:'#000'});
             $navMax.animate({height:screenH-48},400);
             flag=false;
+            $shop.animate({backgroundPositionX:48},300);
         }else{
             flag=true;
             $navMax.animate({height:0},400,function(){
                 $header.css({background:'rgba(0,0,0,0.8)'});
             });
+            $shop.animate({backgroundPositionX:14},300);
         }
     });
 
