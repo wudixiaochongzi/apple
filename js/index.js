@@ -24,7 +24,6 @@ $(function(){
     //footer  list平板下拉
     var $footerBtn=$(".footer-lists h3");
     $footerBtn.click(function(){
-        //$(this).next('ul').css({height:'auto'});
         var screenW=document.documentElement.clientWidth;
         if (screenW<=768){
             $(this).next('ul').slideToggle(400);

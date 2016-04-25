@@ -1,5 +1,5 @@
 body {
-  font-family: "PingHei", "Helvetica Neue", "Helvetica", "STHeitiSC-Light", "Arial", sans-serif;
+  font-family: "Ping Hei", "Helvetica Neue", "Helvetica", "STHeitiSC-Light", "Arial", sans-serif;
 }
 a {
   color: #fff;
@@ -225,13 +225,14 @@ a {
 .footer .footer-inner .footer-lists .list {
   float: left;
   padding-right: 20px;
-  font-size: 12px;
+  font-size: 14px;
 }
 .footer .footer-inner .footer-lists .list h3 {
   color: #333;
+  font-weight: bold;
 }
 .footer .footer-inner .footer-lists .list a {
-  color: #666;
+  color: #333;
 }
 .footer .footer-inner .footer-lists:before,
 .footer .footer-inner .footer-lists:after {
@@ -253,7 +254,6 @@ a {
   }
   .footer-inner .footer-lists .list div h3 {
     font-size: 14px;
-    font-weight: 400;
     cursor: pointer;
   }
   .footer-inner .footer-lists .list div h3:after {
@@ -274,8 +274,7 @@ a {
     line-height: 1.666667;
   }
   .footer-inner .footer-lists .list h3 {
-    font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
   }
   .footer-inner .footer-lists .list ul {
     display: block!important;
@@ -287,8 +286,9 @@ a {
 .footer-bottom {
   padding: 20px 0 24px;
   color: #999;
-  font-size: 12px;
+  font-size: 14px;
   position: relative;
+  letter-spacing: -1px;
 }
 .footer-bottom .footer-shop {
   line-height: 20px;
