@@ -9,7 +9,8 @@ $(function(){
     var $shop=$('.nav-min-shop');
     var screenH=document.documentElement.clientHeight;
     var flag=true;
-    $navBtn.click(function(){
+    $navBtn.click(function(e){
+        e.preventDefault();
         if (flag){
             $header.css({background:'#000'});
             $navMax.animate({height:screenH-48},400);
@@ -78,10 +79,12 @@ $(function(){
             t=setInterval(move,3000);
         }
     );
-    $bannerBtnR.click(function(){
+    $bannerBtnR.click(function(e){
+        e.preventDefault();
         move();
     });
-    $bannerBtnL.click(function(){
+    $bannerBtnL.click(function(e){
+        e.preventDefault();
         if (!flag){return};
         flag=false;
         next--;
