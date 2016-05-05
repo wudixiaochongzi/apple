@@ -16,12 +16,14 @@ $(function(){
             $navMax.animate({height:screenH-48},400);
             flag=false;
             $shop.animate({backgroundPositionX:48},300);
+            $navBtn.addClass("btnClick").removeClass("btnClick2");
         }else{
             flag=true;
             $navMax.animate({height:0},400,function(){
                 $header.css({background:'rgba(0,0,0,0.8)'});
             });
             $shop.animate({backgroundPositionX:14},300);
+            $navBtn.addClass("btnClick2").removeClass("btnClick");
         }
     });
 
